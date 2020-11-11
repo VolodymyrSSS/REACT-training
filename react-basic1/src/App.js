@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className='wrapper'>
-      <h1>REACT Tutorial</h1>
+      <h1>REACT-training:  'Todo List'</h1>
       <TodoList todos={todos}/>
     </div>
 

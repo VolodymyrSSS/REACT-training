@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: #d2b48c;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -16,4 +17,11 @@ code {
   padding-top: 5rem;
   margin: 0 auto;
   width: 600px;
+}
+
+.rm {
+  background: #ff0000;
+  border-radius: 50%;
+  color: #fff;
+  border: none;
 }
