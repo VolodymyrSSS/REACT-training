@@ -1,2 +1,2 @@
-# REACT-training
-The set of exercises
+# REACT-learning
+The set of exercises to create sites with **REACT**
