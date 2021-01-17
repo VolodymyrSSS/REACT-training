@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mycss: clip_path</title>
+    <style>
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    body{
+        background-color: lightblue;
+        margin: 0;
+    }
+
+    p {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .background{
+        height: 100vh;
+        background-image: linear-gradient(to bottom, peru, orangered);
+        /*for the triangle:*/
+        /* clip-path: polygon(50% 0, 100% 100%, 0% 100%); */
+       
+        /*for the trapezoid:*/
+        /* clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%); */
+
+         /*for the circle:*/
+         /* clip-path: circle(50% at 50% 50%); */
+
+         /*for the ellipse:*/
+         clip-path: ellipse(25% 50% at 50% 50%);
+
+    }
+
+    .text-box {
+        color: #FFF;
+        letter-spacing: 0.5em;
+        font-family: sans-serif;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<body>    
+
+    <p>Some neat CSS triks - clip-path and transform.<br>
+        This can be usefull for creating a cool background shape for your website.
+    </p>
+
+    <!-- Добавляем DOM-контейнер в HTML -->
+    <div id="like_button_container"></div>
+
+    <div class="background"></div>
+    
+    <h2 class="text-box">Orange Egg</h2>
+        
+    <!-- Загрузим/добавим React. -->
+    <!-- Примечание: при деплое на продакшен замените «development.js» на «production.min.js». -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Загрузим наш React-компонент. -->
+    <script src="like_button.js"></script>
+    
+</body>
+
+</html>
