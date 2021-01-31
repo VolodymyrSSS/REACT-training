@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method1 to switch React</title>
+  <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+  <!-- The entry point for our app -->
+  <div id="root"></div>
+
+  <!-- the text/babel script type, which is mandatory for using Babel -->
+  <script type="text/babel">
+
+    // to create a React component called App
+    class App extends React.Component {
+      render() {    //the only required method in a class component - to render DOM nodes
+
+        return (
+          <h1>Hello from React !</h1>
+        );
+      }
+    }
+    // the method to render the App class we created into the root div in our HTML
+    ReactDOM.render(<App />, document.getElementById('root'));
+
+  </script>
+  
+</body>
+</html>
