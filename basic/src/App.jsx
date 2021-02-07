@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Clock from './Clock';
 import Comment from './Comment';
 
 import './App.css';
@@ -25,21 +26,12 @@ function App() {
     return user.firstName + ' ' + user.lastName;
   }
 
-  // function tick() {
-  //   const element = (
-  //     <div>
-  //       <h1>Hello, world!</h1>
-  //       <h2>It is {new Date().toLocaleTimeString()}.</h2>
-  //     </div>
-  //   );
-  //   ReactDOM.render(element, document.getElementById('root'));
-  // }
-
   return (
     <div className="container">
       <h1>Hello, {name}!</h1>,
       <h2>Bonjour, {formatName(user)}!</h2>
-      <h3>Hello React, it is {new Date().toLocaleTimeString()}.</h3>
+      <Clock />,
+      <Clock />,
       <Comment
         date={comment.date}
         text={comment.text}
