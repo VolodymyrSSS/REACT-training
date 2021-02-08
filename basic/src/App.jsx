@@ -3,6 +3,7 @@ import React from 'react';
 import Clock from './Clock';
 import Comment from './Comment';
 import ToggleBtn from './ToggleBtn';
+import LoginControl from './LoginControl';
 
 import './App.css';
 
@@ -38,7 +39,9 @@ function App() {
         author={comment.author}
       />,
       <br/>
-      <ToggleBtn />
+      <ToggleBtn />,
+      <LoginControl />
+
     </div>
   )
 
