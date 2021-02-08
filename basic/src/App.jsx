@@ -2,6 +2,7 @@ import React from 'react';
 
 import Clock from './Clock';
 import Comment from './Comment';
+import ToggleBtn from './ToggleBtn';
 
 import './App.css';
 
@@ -31,12 +32,13 @@ function App() {
       <h1>Hello, {name}!</h1>,
       <h2>Bonjour, {formatName(user)}!</h2>
       <Clock />,
-      <Clock />,
       <Comment
         date={comment.date}
         text={comment.text}
         author={comment.author}
-      />
+      />,
+      <br/>
+      <ToggleBtn />
     </div>
   )
 
