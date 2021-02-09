@@ -1,5 +1,6 @@
 import React from 'react';
 
+import HelloMessage from './HelloMessage';
 import Clock from './Clock';
 import Comment from './Comment';
 import ToggleBtn from './ToggleBtn';
@@ -30,16 +31,17 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Hello, {name}!</h1>,
+      <h1>Hello, {name}!</h1>
       <h2>Bonjour, {formatName(user)}!</h2>
-      <Clock />,
+      <HelloMessage name="Ellis"/>
+      <Clock />
       <Comment
         date={comment.date}
         text={comment.text}
         author={comment.author}
-      />,
+      />
       <br/>
-      <ToggleBtn />,
+      <ToggleBtn />
       <LoginControl />
 
     </div>

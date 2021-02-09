@@ -1,6 +1,5 @@
-import React from 'react';
-
 // It will render either <LoginButton /> or <LogoutButton /> depending on its current state.
+import React from 'react';
 
 // create a stateful component 
 class LoginControl extends React.Component {
