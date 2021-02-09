@@ -1,8 +1,9 @@
 import React from 'react';
 
 import HelloMessage from './HelloMessage';
-import Clock from './Clock';
+import SecondsRunner from './SecondsRunner';
 import Comment from './Comment';
+import Clock from './Clock';
 import ToggleBtn from './ToggleBtn';
 import LoginControl from './LoginControl';
 
@@ -34,13 +35,15 @@ function App() {
       <h1>Hello, {name}!</h1>
       <h2>Bonjour, {formatName(user)}!</h2>
       <HelloMessage name="Ellis"/>
-      <Clock />
+      <SecondsRunner />
+      <br/>
       <Comment
         date={comment.date}
         text={comment.text}
         author={comment.author}
       />
       <br/>
+      <Clock />
       <ToggleBtn />
       <LoginControl />
 
