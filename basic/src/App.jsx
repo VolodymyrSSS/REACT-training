@@ -8,6 +8,7 @@ import ToggleBtn from './ToggleBtn';
 import LoginControl from './LoginControl';
 import Mailbox from './Mailbox';
 import WarningPage from './WarningPage';
+import FruitsList from './FruitsList';
 
 import './App.css';
 
@@ -29,6 +30,14 @@ function App() {
   };
 
   const messages = ['React', 'Re: React', 'Re:Re: React'];
+
+  const numbers = [1, 2, 3, 4];
+
+  const listItems = numbers.map((numbers) =>
+    <li>{numbers}</li>
+  );
+
+  const fruits = ['apple', 'pear', 'plum', 'apricot']
 
   function formatName(user) {
     return user.firstName + ' ' + user.lastName;
@@ -52,6 +61,8 @@ function App() {
       <LoginControl />
       <Mailbox unreadMessages={messages} />
       <WarningPage />
+      <ul>{listItems}</ul>
+      <FruitsList fruits={fruits} />
 
     </div>
   )
