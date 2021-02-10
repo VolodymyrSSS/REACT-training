@@ -6,6 +6,8 @@ import Comment from './Comment';
 import Clock from './Clock';
 import ToggleBtn from './ToggleBtn';
 import LoginControl from './LoginControl';
+import Mailbox from './Mailbox';
+import WarningPage from './WarningPage';
 
 import './App.css';
 
@@ -25,6 +27,8 @@ function App() {
       avatarUrl: 'https://placekitten.com/g/64/64',
     },
   };
+
+  const messages = ['React', 'Re: React', 'Re:Re: React'];
 
   function formatName(user) {
     return user.firstName + ' ' + user.lastName;
@@ -46,6 +50,8 @@ function App() {
       <Clock />
       <ToggleBtn />
       <LoginControl />
+      <Mailbox unreadMessages={messages} />
+      <WarningPage />
 
     </div>
   )
