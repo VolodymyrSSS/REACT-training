@@ -33,6 +33,7 @@ class WarningPage extends React.Component {
         <button onClick={this.handleToggleClick}>
           {this.state.showWarning ? 'Hide' : 'Show'}
         </button>
+        <hr />
       </div>
     );
   }

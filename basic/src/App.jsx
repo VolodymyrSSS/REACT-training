@@ -9,6 +9,8 @@ import LoginControl from './LoginControl';
 import Mailbox from './Mailbox';
 import WarningPage from './WarningPage';
 import FruitsList from './FruitsList';
+import NumberList from './NumberList';
+import Blog from './Blog';
 
 import './App.css';
 
@@ -39,6 +41,14 @@ function App() {
 
   const fruits = ['apple', 'pear', 'plum', 'apricot']
 
+  const sampleNumbers = [24, 36, 44, 88];
+
+  const posts = [
+    {id: 1, title: 'Абабагаламага', content: 'Це такий книжковий видавник'},
+    {id: 2, title: 'Тенотчетлан', content: 'Це була столиця інків'},
+    {id: 3, title: 'Парне молоко', content: 'Коли я пас корову, я пив парне молоко'}
+  ];
+
   function formatName(user) {
     return user.firstName + ' ' + user.lastName;
   }
@@ -63,6 +73,8 @@ function App() {
       <WarningPage />
       <ul>{listItems}</ul>
       <FruitsList fruits={fruits} />
+      <NumberList sampleNumbers={sampleNumbers} />
+      <Blog posts={posts} />
 
     </div>
   )

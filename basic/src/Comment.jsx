@@ -15,6 +15,7 @@ function UserInfo(props) {
 function Comment(props) {
   return (
     <div className="Comment">
+      <hr />
       <div className="UserInfo">
         <img className="Avatar"
           src={props.author.avatarUrl}

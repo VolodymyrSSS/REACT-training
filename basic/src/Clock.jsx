@@ -35,10 +35,12 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
+        <hr />
         <h2>Hello, WORLD!</h2>
         {/* <h3>Now, it is {this.state.date.toLocaleTimeString()}.</h3> */}
         {/* // top-down or unidirectional data stream */}
         <FormattedDate date={this.state.date} />
+        <hr />
       </div>
     );
   }

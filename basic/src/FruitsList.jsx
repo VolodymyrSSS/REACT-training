@@ -9,7 +9,10 @@ function FruitsList(props) {
     <li key={index.toString()}>{index + 1} {fruit}</li>
   );
   return (
-    <ul>{fruitsItems}</ul>
+    <ul>
+      {fruitsItems}
+      <hr />
+    </ul>
   );
 }
 
