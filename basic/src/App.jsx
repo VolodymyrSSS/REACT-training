@@ -11,6 +11,7 @@ import WarningPage from './WarningPage';
 import FruitsList from './FruitsList';
 import NumberList from './NumberList';
 import Blog from './Blog';
+import NameForm from './NameForm';
 
 import './App.css';
 
@@ -75,6 +76,7 @@ function App() {
       <FruitsList fruits={fruits} />
       <NumberList sampleNumbers={sampleNumbers} />
       <Blog posts={posts} />
+      <NameForm />
 
     </div>
   )
