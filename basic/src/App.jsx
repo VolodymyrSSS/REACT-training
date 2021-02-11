@@ -12,6 +12,7 @@ import FruitsList from './FruitsList';
 import NumberList from './NumberList';
 import Blog from './Blog';
 import NameForm from './NameForm';
+import EssayForm from './EssayForm';
 
 import './App.css';
 
@@ -77,7 +78,7 @@ function App() {
       <NumberList sampleNumbers={sampleNumbers} />
       <Blog posts={posts} />
       <NameForm />
-
+      <EssayForm />
     </div>
   )
 
