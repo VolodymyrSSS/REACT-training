@@ -26,13 +26,11 @@ class EssayForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <hr />
         <label>
           The essay:
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Send" />
-        <hr />
       </form>
     );
   }

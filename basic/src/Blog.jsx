@@ -11,6 +11,7 @@ function Blog(props) {
     </ul>
   );
   const content = props.posts.map((post) =>
+    // key needs to be defined here
     <div key={post.id}>
       <h3>{post.title}</h3>
       <p>{post.content}</p>
@@ -19,9 +20,7 @@ function Blog(props) {
   return (
     <div>
       {sidebar}
-      <hr />
       {content}
-      <hr />
     </div>
   );
 }

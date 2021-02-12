@@ -11,7 +11,6 @@ function FruitsList(props) {
   return (
     <ul>
       {fruitsItems}
-      <hr />
     </ul>
   );
 }
