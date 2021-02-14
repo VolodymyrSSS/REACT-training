@@ -15,6 +15,8 @@ import NameForm from './NameForm';
 import EssayForm from './EssayForm';
 import FlavorForm from './FlavorForm';
 import Reservation from './Reservation';
+import BoilingWaterCalculator from './BoilingWaterCalculator';
+import WelcomeDialog from './WelcomeDialog';
 
 import './App.css';
 
@@ -100,6 +102,10 @@ function App() {
       <FlavorForm />
       <hr />
       <Reservation />
+      <hr />
+      <BoilingWaterCalculator />
+      <hr />
+      <WelcomeDialog />
       <hr />
     </div>
   )

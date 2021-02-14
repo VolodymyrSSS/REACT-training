@@ -1,5 +1,6 @@
 import React from 'react';
 
+// the library Formik is built on the principles of managed components and state management, so do not neglect to learn them: https://formik.org/
 class Reservation extends React.Component {
   constructor(props) {
     super(props);
