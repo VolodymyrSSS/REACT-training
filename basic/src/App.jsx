@@ -4,6 +4,7 @@ import HelloMessage from './HelloMessage';
 import SecondsRunner from './SecondsRunner';
 import Comment from './Comment';
 import Clock from './Clock';
+import SplitPane from './SplitPane';
 import ToggleBtn from './ToggleBtn';
 import LoginControl from './LoginControl';
 import Mailbox from './Mailbox';
@@ -55,8 +56,35 @@ function App() {
     {id: 3, title: 'Парне молоко', content: 'Коли я пас корову, я пив парне молоко'}
   ];
 
+  const styles = {
+    Contacts: {
+      width: '100%',
+      height: '100%', 
+      background: 'lightblue'
+    },
+    Chat: {
+      width: '100%',
+      height: '100%', 
+      background: 'pink'
+    }
+  }
+
   function formatName(user) {
     return user.firstName + ' ' + user.lastName;
+  }
+
+  // React elements like <Contacts /> and <Chat /> are just objects, so you can pass them as props like any other data. There are no limitations on what you can pass as props in React.
+
+  function Contacts () {
+    return (
+      <div style={styles.Contacts}></div>
+    );
+  }
+
+  function Chat () {
+    return (
+      <div style={styles.Chat}></div>
+    );
   }
 
   return (
@@ -78,6 +106,8 @@ function App() {
       <br/>
       <hr />
       <Clock />
+      <hr />
+      <SplitPane left={<Contacts />} right={<Chat />}/>
       <hr />
       <ToggleBtn />
       <hr />
@@ -107,6 +137,7 @@ function App() {
       <hr />
       <WelcomeDialog />
       <hr />
+
     </div>
   )
 
