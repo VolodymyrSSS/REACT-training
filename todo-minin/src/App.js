@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Context from './context';
 
 import TodoList from './Todo/TodoList';
@@ -6,11 +6,22 @@ import AddTodo from './Todo/AddTodo';
 
 function App() {
   const [todos, setTodos] = React.useState([
-    {id:1, completed:false, title:'To buy a bread and butter'},
-    {id:2, completed:true, title:'To buy the fruits and vegetables'},
-    {id:3, completed:false, title:'To buy a BMW X4'},
-    {id:4, completed:false, title:'To buy a yacht "Beneteau Oceanis40Poole Length12.15"'}
+    // {id:1, completed:false, title:'To buy a bread and butter'},
+    // {id:2, completed:true, title:'To buy the fruits and vegetables'},
+    // {id:3, completed:false, title:'To buy a BMW X4'},
+    // {id:4, completed:false, title:'To buy a yacht "Beneteau Oceanis40Poole Length12.15"'}
   ]);
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=9')
+      .then(response => response.json())
+      .then(todos => {
+        // mocking server response delay for 2sec
+        setTimeout(()=> {
+          setTodos(todos)
+        }, 2000)
+      })
+  }, [])
 
   function toggleTodo(id) {
     setTodos(
