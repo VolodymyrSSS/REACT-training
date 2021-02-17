@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import Context from './context';
 
+import Loader from './Loader';
 import TodoList from './Todo/TodoList';
 import AddTodo from './Todo/AddTodo';
+
 
 function App() {
   const [todos, setTodos] = React.useState([
@@ -12,13 +14,16 @@ function App() {
     // {id:4, completed:false, title:'To buy a yacht "Beneteau Oceanis40Poole Length12.15"'}
   ]);
 
+  const [loading, setLoading] = React.useState(true);
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos?_limit=9')
       .then(response => response.json())
       .then(todos => {
         // mocking server response delay for 2sec
         setTimeout(()=> {
-          setTodos(todos)
+          setTodos(todos);
+          setLoading(false);
         }, 2000)
       })
   }, [])
@@ -57,9 +62,11 @@ function App() {
 
         <AddTodo onCreate={addTodo}/>
 
+        {loading && <Loader />}
+
         {todos.length 
         ? (<TodoList todos={todos} onToggle={toggleTodo} />) 
-        : (<h3>You have no todos!</h3>) }
+        : (loading ? null : <h3>You have no todos!</h3>) }
       </div>
     </Context.Provider>
   );
