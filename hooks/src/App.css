@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #d2b48c;
 }
 
 .App-header {
@@ -11,6 +12,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-main {
+  min-height: 70vh;
 }
 
 .App-footer {
