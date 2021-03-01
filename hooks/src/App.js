@@ -3,6 +3,7 @@ import React from 'react';
 import HookUseState from './components/HookUseState';
 import HookUseEffect from './components/HookUseEffect';
 import HookUseRef from './components/HookUseRef';
+import HookUseMemo from './components/HookUseMemo';
 
 import './App.css';
 
@@ -21,6 +22,9 @@ function App() {
         <HookUseEffect />
         <h2>Хук 'useRef'</h2>
         <HookUseRef />
+        <br />
+        <h2>Хук 'useMemo'</h2>
+        <HookUseMemo />
       </main>
       <footer className="App-footer">
         <h4>Volodymyr Sych: React Hooks learning</h4>
