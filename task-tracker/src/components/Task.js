@@ -17,7 +17,9 @@ const Task = ({ task, onDelete, onToggle }) => {
 }
 
 Task.propsType = {
-  task: PropTypes.object
+  task: PropTypes.object,
+  onDelete: PropTypes.func,
+  onToggle: PropTypes.func
 }
 
 export default Task

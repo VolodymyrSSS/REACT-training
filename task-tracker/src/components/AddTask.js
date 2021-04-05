@@ -27,7 +27,7 @@ const AddTask = ({ onAdd }) => {
         <input 
           type='text' 
           value={text} 
-          placeholder='here your task ...'
+          placeholder='type your task ...'
           onChange={(event) => setText(event.target.value)}
         />
       </div>
