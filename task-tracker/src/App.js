@@ -1,43 +1,75 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 
 const App = () => {
+    
+  // const [tasks, setTasks] = useState([
+  //   {
+  //     id: 1,
+  //     text: 'physical exercises: jogging, pullups, stretching',
+  //     day: 'March 25th, at 10.30am',
+  //     reminder: true
+  //   },
+  //   {
+  //     id: 2,
+  //     text: 'IT-classes: unit-testing in React topic',
+  //     day: 'March 26th, at 13.45am',
+  //     reminder: true
+  //   },
+  //   {
+  //     id: 3,
+  //     text: 'dacha activity - protect trees against-insect spray, book shelf constructions',
+  //     day: 'March 27th, at 12.10am',
+  //     reminder: false
+  //   }
+  // ]);
+
   const[showAddTask, setShowAddTask] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      text: 'physical exercises: jogging, pullups, stretching',
-      day: 'March 25th, at 10.30am',
-      reminder: true
-    },
-    {
-      id: 2,
-      text: 'IT-classes: unit-testing in React topic',
-      day: 'March 26th, at 13.45am',
-      reminder: true
-    },
-    {
-      id: 3,
-      text: 'dacha activity - protect trees against-insect spray, book shelf constructions',
-      day: 'March 27th, at 12.10am',
-      reminder: false
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      setTasks(tasksFromServer)
     }
-  ]);
+    getTasks();
+  }, []);
+
+  // fetch tasks
+  const fetchTasks = async () => {
+    const res = await fetch('http://localhost:5000/tasks');
+    const data = await res.json();
+
+    return data;
+  }
 
   // add task
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 10000) + 1;
+  const addTask = async (task) => {
+    // add on UI
+    // const id = Math.floor(Math.random() * 10000) + 1; // create ID
+    // const newTask = {id, ...task} // assign ID to the new task
+    // setTasks([...tasks, newTask]) // change the state with new task
 
-    const newTask = {id, ...task};
-    setTasks([...tasks, newTask]);
+    // add on server
+    const res = await fetch('http://localhost:5000/tasks', {
+      method: 'POST',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify(task)
+    });
+    const data = await res.json(); // getting a new task
+    setTasks([...tasks, data]); // take existing tasks and add new task to it
   }
 
   // delete task
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id))
+  const deleteTask = async (id) => {
+    await fetch(`http://localhost:5000/tasks/${id}`, { // delete on server
+      method: 'DELETE'
+    })
+
+    setTasks(tasks.filter((task) => task.id !== id)) // delete from UI
   };
 
   // toggle remainder
