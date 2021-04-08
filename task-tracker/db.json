@@ -4,13 +4,13 @@
       "id": 1,
       "text": "physical exercises: jogging, pullups, stretching",
       "day": "March 25th, at 10.30am",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 2,
       "text": "IT-classes: unit-testing in React topic",
       "day": "March 26th, at 13.45am",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
