@@ -1,0 +1,26 @@
+<body>
+  <h2>Create a User Interface with React’s createElement API</h2>
+
+  <div id="root"></div>
+
+  <p>
+    React uses the same APIs to control and update the DOM as Document but it
+    offers so much to the table that we’re going to introduce it into the
+    project and rewrite what we’ve written to React code. Instead of creating
+    DOM elements, we’ll create React elements and then hand those off to
+    react-dom to handle turning those into DOM elements and putting them into
+    the page. It’s important to understand the createElement API first so you
+    understand the magic
+  </p>
+
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script type="text/javascript">
+    const rootElement = document.getElementById('root');
+    const element = React.createElement('div', {
+      className: 'container',
+      children: 'Hello World',
+    });
+    ReactDOM.render(element, rootElement);
+  </script>
+</body>
