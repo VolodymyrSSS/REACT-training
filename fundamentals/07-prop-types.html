@@ -1,0 +1,68 @@
+<body>
+  <h2>Validate Custom React Component Props with PropTypes</h2>
+
+  <div id="root"></div>
+
+  <p>
+    When you create reusable React components, you want to make sure that people
+    use them correctly. The best way to do this is to use TypeScript in your
+    codebase to give you compile-time checking of your code. But if you’re not
+    using TypeScript, you can still use PropTypes to get runtime validation.
+  </p>
+
+  <p>
+    React supports a feature called prop-types that allows you to validate the
+    types of props that are being passed to your components when they're
+    rendered. We'll have a key for the prop that we want to validate. That's
+    going to be a function that takes the prop name and the component name. We
+    could add a bunch more validators to the prop-types, for numbers and
+    whatever else you could imagine.
+  </p>
+
+  <p>
+    But if you want to make sure that it's required, then you can add "a dot is
+    required on both of these." Save that and now you'll get a warning saying
+    that the first name is the wrong type and the last name is required but
+    wasn't provided.
+  </p>
+
+  <p>
+    One reasonable concern you might have about prop-types is that it adds a
+    fair amount of code that needs to be run whenever React is rendering your
+    components which may impact performance.
+  </p>
+
+  <p>
+    If you want to take things a step further, then you can actually get a Babel
+    plugin that will remove the prop-types from your source code for production.
+    That plugin is called Babel-plugin-transform-remove-prop-types. You could
+    install that and use that in your production build, or many tool kits
+    install and use this by default. As well, you can go to the prop-types page
+    on npm.
+  </p>
+
+  <script src="https://unpkg.com/react@16.12.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
+  <script type="text/babel">
+    const rootElement = document.getElementById('root');
+
+    function SayHello({ firstName, lastName }) {
+      return (
+        <div>
+          Hello {firstName} {lastName}!
+        </div>
+      );
+    }
+
+    SayHello.propTypes = {
+      firstName: PropTypes.string.isRequired,
+      lastName: PropTypes.string.isRequired,
+    };
+
+    const element = <SayHello firstName={false} />;
+
+    ReactDOM.render(element, rootElement);
+  </script>
+</body>
