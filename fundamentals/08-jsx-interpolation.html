@@ -1,0 +1,42 @@
+<body>
+  <h2>Understand and Use Interpolation in JSX</h2>
+
+  <p>
+    Here we learn that interpolation is not unique to JSX and we’ll learn the
+    limitations and capabilities of interpolation in JSX.
+  </p>
+
+  <p>
+    This type of interpolation is not unique to just JSX. In fact, we have a
+    couple other examples of interpolation right here. This file is an HTML
+    file, and we start with HTML all right here. We're still going through HTML
+    until we hit the end of this opening script tag. Now we're in JavaScript
+    land. We also have style tags, and now we're in CSS land. HTML has always
+    had this type of interpolation.
+  </p>
+
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <script type="text/babel">
+    function CharacterCount({ text }) {
+      return (
+        <div>
+          {`The text "${text}" has `}
+          {text.length ? <strong>{text.length}</strong> : 'No'}
+          {' characters'}
+        </div>
+      );
+    }
+
+    const element = (
+      <>
+        <CharacterCount text="Hello World" />
+        <CharacterCount text="" />
+      </>
+    );
+
+    ReactDOM.render(element, document.getElementById('root'));
+  </script>
+</body>
