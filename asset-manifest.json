@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.e0519c33.chunk.css",
-    "main.js": "/static/js/main.3fdd175a.chunk.js",
-    "main.js.map": "/static/js/main.3fdd175a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2ea38f57.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2ea38f57.js.map",
-    "static/js/2.55be931b.chunk.js": "/static/js/2.55be931b.chunk.js",
-    "static/js/2.55be931b.chunk.js.map": "/static/js/2.55be931b.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.e0519c33.chunk.css.map": "/static/css/main.e0519c33.chunk.css.map",
-    "static/js/2.55be931b.chunk.js.LICENSE.txt": "/static/js/2.55be931b.chunk.js.LICENSE.txt"
+    "main.css": "/add-job-form/static/css/main.b10ce008.css",
+    "main.js": "/add-job-form/static/js/main.9b6dd4f8.js",
+    "index.html": "/add-job-form/index.html",
+    "main.b10ce008.css.map": "/add-job-form/static/css/main.b10ce008.css.map",
+    "main.9b6dd4f8.js.map": "/add-job-form/static/js/main.9b6dd4f8.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.2ea38f57.js",
-    "static/js/2.55be931b.chunk.js",
-    "static/css/main.e0519c33.chunk.css",
-    "static/js/main.3fdd175a.chunk.js"
+    "static/css/main.b10ce008.css",
+    "static/js/main.9b6dd4f8.js"
   ]
 }
