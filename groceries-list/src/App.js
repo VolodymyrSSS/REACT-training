@@ -6,23 +6,9 @@ import Footer from './Footer';
 import AddItem from './AddItem';
 
 function App() {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: true,
-      item: 'One half pound bag of Cocoa Covered Almonds Unsalted',
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "One pound of 'Abisinya' coffee",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: 'Three bars of chocolate 80% coconut butter',
-    },
-  ]);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem('shoppingList'))
+  );
 
   const [newItem, setNewItem] = useState('');
 
