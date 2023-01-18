@@ -6,14 +6,14 @@
       "item": "One half pound bag of Cocoa Covered Almonds Unsalted"
     },
     {
-      "id": 2,
-      "checked": false,
-      "item": "One pound of 'Abisinya' coffee"
-    },
-    {
       "id": 3,
       "checked": false,
       "item": "Three bars of chocolate 80% coconut butter"
+    },
+    {
+      "id": 4,
+      "checked": true,
+      "item": "Pizza 'four seasons' with orange juse"
     }
   ]
 }

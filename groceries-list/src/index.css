@@ -145,6 +145,7 @@ ul li::before {
   justify-content: flex-start;
   margin: 0.5rem 0 0;
   padding: 0 0.5rem 0.25rem;
+  backdrop-filter: blur(7px);
   border-bottom: 1px solid #eee;
 }
 
@@ -189,6 +190,7 @@ button:hover {
   margin: 0.25rem 0 0;
   padding: 0 0.5rem 0.25rem;
   border-bottom: 1px solid #eee;
+  backdrop-filter: blur(7px);
 }
 
 .search-form label {
