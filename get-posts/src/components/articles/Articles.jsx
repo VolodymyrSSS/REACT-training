@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import styles from './Articles.module.scss';
 
@@ -9,10 +10,10 @@ function Articles() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await fetch(
+				const { data } = await axios.get(
 					'https://jsonplaceholder.typicode.com/posts'
 				);
-				const data = await response.json();
+
 				setPosts(data);
 			} catch (error) {
 				alert(error.info);
@@ -25,9 +26,7 @@ function Articles() {
 	return (
 		<div style={{ padding: '20px 50px' }}>
 			<h1>Articles</h1>
-
 			{loading && 'LOADING .....'}
-
 			<div className={styles.wrapper}>
 				{posts.map((post) => (
 					<div className={styles.card} key={post.id}>

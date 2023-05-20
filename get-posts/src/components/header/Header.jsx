@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { menu } from '../../assets/menu.js';
 import logo from '../../assets/img/spidermonkey.svg';
 
@@ -14,7 +15,7 @@ function Header() {
 				<ul className={styles.menu}>
 					{menu.map((item, index) => (
 						<li key={index}>
-							<a href={item.link}>{item.title}</a>
+							<Link to={item.link}>{item.title}</Link>
 						</li>
 					))}
 				</ul>
