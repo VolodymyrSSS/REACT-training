@@ -1,47 +1,49 @@
 <body>
-  <h2>Create a User Interface with React’s JSX syntax</h2>
+	<h2>Create a User Interface with React’s JSX syntax</h2>
 
-  <div id="root"></div>
+	<div id="root"></div>
 
-  <p>
-    It’s awesome that we can interact directly with React’s createElement API to
-    create React elements and then hand those off to React DOM to get them to
-    show up on the screen. But it’s not the most ergonomic API to write our UI
-    code in. It’s hard to track when one element starts and the next one ends.
-    This is why the React team came up with JSX. It’s an extension to the
-    JavaScript language to support syntax that looks similar to the HTML that
-    you would write to create these DOM elements (there are a handful of
-    differences). JSX gives us an expressive syntax for representing our UI,
-    without losing the benefits and powers of writing our UI in JavaScript.
-  </p>
+	<p>
+		It’s awesome that we can interact directly with React’s createElement API to
+		create React elements and then hand those off to React DOM to get them to
+		show up on the screen. But it’s not the most ergonomic API to write our UI
+		code in. It’s hard to track when one element starts and the next one ends.
+		This is why the React team came up with JSX. It’s an extension to the
+		JavaScript language to support syntax that looks similar to the HTML that
+		you would write to create these DOM elements (there are a handful of
+		differences). JSX gives us an expressive syntax for representing our UI,
+		without losing the benefits and powers of writing our UI in JavaScript.
+	</p>
 
-  <p>
-    Babel is a JavaScript compiler supporting the next generation of JavaScript
-    as well as non-standard features like JSX. If we go to this Try It Out page
-    and then go over here and copy our code and paste it in here, then we'll see
-    that our code is being compiled to something that's very familiar to us.
-  </p>
+	<p>
+		Babel is a JavaScript compiler supporting the next generation of JavaScript
+		as well as non-standard features like JSX. If we go to this Try It Out page
+		and then go over here and copy our code and paste it in here, then we'll see
+		that our code is being compiled to something that's very familiar to us.
+	</p>
 
-  <p>
-    we wanted to do here was make it so that we can author our UI without using
-    the React createElement API and instead use JSX, which is an HTML-like
-    syntax for authoring UI. [2:44] To do this, we need a compiler like Babel.
-    We installed Babel standalone, which will compile our code on the fly in the
-    browser. We also had to update our type to text/babel. Babel will look for
-    all scripts that have that type, compile the code that's inside them, and
-    insert a new script that has the compiled code so the browser can evaluate
-    it. [3:05] In a typical application, you will not be using Babel standalone.
-    Instead, you'll be using another tool which probably is using Babel to
-    compile your code. That way, you get a much more friendly syntax for
-    authoring your UI with React.
-  </p>
+	<p>
+		we wanted to do here was make it so that we can author our UI without using
+		the React createElement API and instead use JSX, which is an HTML-like
+		syntax for authoring UI.<br />
+		To do this, we need a compiler like Babel.<br />
+		We installed Babel standalone, which will compile our code on the fly in the
+		browser. We also had to update our type to text/babel. Babel will look for
+		all scripts that have that type, compile the code that's inside them, and
+		insert a new script that has the compiled code so the browser can evaluate
+		it. <br />
+		In a typical application, you will not be using Babel standalone. Instead,
+		you'll be using another tool which probably is using Babel to compile your
+		code. That way, you get a much more friendly syntax for authoring your UI
+		with React.
+	</p>
 
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
-  <script type="text/babel">
-    const rootElement = document.getElementById('root');
-    const element = <div className="container">Hello World</div>;
-    ReactDOM.render(element, rootElement);
-  </script>
+	<script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+	<script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+	<script type="text/babel">
+		const rootElement = document.getElementById('root');
+		const element = <div className='container'>Hello World</div>;
+		ReactDOM.render(element, rootElement);
+	</script>
 </body>
