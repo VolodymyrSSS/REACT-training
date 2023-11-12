@@ -71,4 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## `npm i react-router-dom -S` to install Router of the latest version
 
-## `npm i react-router-dom@5.2.0` to install Router of the version 5.2.0
+## `npm i react-router-dom@5.3.3` to install Router of the version 5.3.3
+
+## `npm i react-router-dom@6` to install(upgrade from v5) Router of the version like 6.18.0
+
+## `npm i date-fns -S` to save in prod a Date lib
