@@ -76,3 +76,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## `npm i react-router-dom@6` to install(upgrade from v5) Router of the version like 6.18.0
 
 ## `npm i date-fns -S` to save in prod a Date lib
+
+## `npm i axios` to install axios and to read with documentation on this https://www.npmjs.com/package/axios
