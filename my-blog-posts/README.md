@@ -78,3 +78,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## `npm i date-fns -S` to save in prod a Date lib
 
 ## `npm i axios` to install axios and to read with documentation on this https://www.npmjs.com/package/axios
+
+## `npm i react-icons` to install icons for React

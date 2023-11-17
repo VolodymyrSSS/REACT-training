@@ -3,10 +3,10 @@ import Nav from './Nav';
 import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 
-const Layout = ({ search, setSearch }) => {
+const Layout = ({ search, setSearch, width }) => {
 	return (
 		<div className='App'>
-			<Header title='My blog page' />
+			<Header title='My blog page' width={width} />
 			<Nav search={search} setSearch={setSearch} />
 			<Outlet />
 			<Footer />
