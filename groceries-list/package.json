@@ -36,5 +36,19 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	}
+	},
+	"jest": {
+		"moduleNameMapper": {
+			"axios": "axios/dist/node/axios.cjs"
+		}
+	},
+	"collectCoverageFrom": [
+		"src/**/*.{js,jsx,ts,tsx}",
+		"!<rootDir>/node_modules/",
+		"<rootDir>/src/setupTests.js"
+	],
+	"coverageReporters": [
+		"text",
+		"lcov"
+	]
 }
