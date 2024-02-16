@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should add a new content into input field 1`] = `
+<form
+  className="add-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label>
+      Task Content
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="type your task ..."
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control"
+  >
+    <label>
+      Day & Time
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="define your day and time"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control form-control-check"
+  >
+    <label>
+      Set Reminder
+    </label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <input
+    className="btn btn-block"
+    type="submit"
+    value="Save task"
+  />
+</form>
+`;
+
+exports[`should add a new content into input field 2`] = `
+<form
+  className="add-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label>
+      Task Content
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="type your task ..."
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control"
+  >
+    <label>
+      Day & Time
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="define your day and time"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control form-control-check"
+  >
+    <label>
+      Set Reminder
+    </label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <input
+    className="btn btn-block"
+    type="submit"
+    value="Save task"
+  />
+</form>
+`;
+
+exports[`should check the tasks 1`] = `
+<form
+  className="add-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label>
+      Task Content
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="type your task ..."
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control"
+  >
+    <label>
+      Day & Time
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="define your day and time"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control form-control-check"
+  >
+    <label>
+      Set Reminder
+    </label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <input
+    className="btn btn-block"
+    type="submit"
+    value="Save task"
+  />
+</form>
+`;
+
+exports[`should check the tasks 2`] = `
+<form
+  className="add-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label>
+      Task Content
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="type your task ..."
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control"
+  >
+    <label>
+      Day & Time
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="define your day and time"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control form-control-check"
+  >
+    <label>
+      Set Reminder
+    </label>
+    <input
+      checked={true}
+      onChange={[Function]}
+      type="checkbox"
+      value={true}
+    />
+  </div>
+  <input
+    className="btn btn-block"
+    type="submit"
+    value="Save task"
+  />
+</form>
+`;
+
+exports[`should match its empty snapshot 1`] = `
+<form
+  className="add-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="form-control"
+  >
+    <label>
+      Task Content
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="type your task ..."
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control"
+  >
+    <label>
+      Day & Time
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="define your day and time"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-control form-control-check"
+  >
+    <label>
+      Set Reminder
+    </label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+      value={false}
+    />
+  </div>
+  <input
+    className="btn btn-block"
+    type="submit"
+    value="Save task"
+  />
+</form>
+`;
