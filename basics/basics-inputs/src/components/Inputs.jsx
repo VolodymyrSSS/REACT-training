@@ -1,23 +1,27 @@
 import {useState} from 'react';
 
 export default function Inputs () {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  // const [formData, setFormData] = useState({name: "", age: "age"});
+  // const [name, setName] = useState("");
+  // const [age, setAge] = useState("");
+  const [formData, setFormData] = useState({name: "", age: ""});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, age);
+    // console.log(name, age);
+    console.log(formData);
   }
 
   const handleChange = (e) => {
-    if (e.target.name === "name") {
-      setName(e.target.value);
-    }
-    if (e.target.name === "age") {
-      setAge(e.target.value);
-    }
+    // if (e.target.name === "name") {
+    //   setName(e.target.value);
+    // }
+    // if (e.target.name === "age") {
+    //   setAge(e.target.value);
+    // }
+
+    setFormData(prev => ({...prev, [e.target.name]: e.target.value}));
   }
+
   /* Here, the attributes were used:
     "autocomplete" (autoComplete for React)- the browser automatically complete values based on values that the user has entered before;
     "for" (htmlFor for React) attribute of the "label" tag should be equal to the "id" attribute of the input element to bind them together;
@@ -33,8 +37,8 @@ export default function Inputs () {
         type="text"
         id="name"
         name="name"
-        value={name}
-        // value={formData.name}
+        // value={name}
+        value={formData.name}
         onChange={handleChange}
       />
       <label htmlFor="age">Age:</label>
@@ -43,9 +47,10 @@ export default function Inputs () {
         type="text"
         id="age"
         name="age"
-        value={age}
-        // value={formData.age}
-        onChange={handleChange}/>
+        // value={age}
+        value={formData.age}
+        onChange={handleChange}
+      />
       <button>Submit</button>
     </form>
   );
