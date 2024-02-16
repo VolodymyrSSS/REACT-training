@@ -9,6 +9,7 @@ export default function Inputs () {
     e.preventDefault();
     // console.log(name, age);
     console.log(formData);
+    setFormData({name: "", age: ""}); // reset to empty value
   }
 
   const handleChange = (e) => {
@@ -20,7 +21,8 @@ export default function Inputs () {
     // }
 
     setFormData(prev => ({...prev, [e.target.name]: e.target.value}));
-  }
+  }    
+
 
   /* Here, the attributes were used:
     "autocomplete" (autoComplete for React)- the browser automatically complete values based on values that the user has entered before;
