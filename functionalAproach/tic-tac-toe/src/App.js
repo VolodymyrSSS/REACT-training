@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function Square({ value, onSquareClick }) {
+function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
       {value}
@@ -8,11 +8,7 @@ export function Square({ value, onSquareClick }) {
   );
 }
 
-export default function Board() {
-  // xIsNext (a boolean) will be flipped to determine which player goes next and the game’s state will be saved
-  const [xIsNext, setXIsNext] = useState(true);
-  //  creates an array with nine elements and sets each of them to null
-  const [squares, setSquares] = useState(Array(9).fill(null));
+function Board({ xIsNext, squares, onPlay }) {
 
   function handleClick(index) {
     // to check to see if the square already has a "X" or an "O"
@@ -31,13 +27,12 @@ export default function Board() {
       nextSquares[index] = "O"; // updates the nextSquares array
     }
 
-    // trigger a re-render of the components that use the squares state as well as its child components
-    setSquares(nextSquares); 
-    setXIsNext(!xIsNext); // to flip the value of xIsNext
+    // the Game component can update the Board when the user clicks a square - to update Game’s state to trigger a re-render
+    onPlay(nextSquares);
   }
 
   function calculateWinner(squares) {
-    // визначені виграшні лінії/ряди - послідовність квадратів створюють виграшну лінію/ряд
+    // виграшні ряди - послідовність квадратів у ряді, які створюють виграшну комбінацію
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -49,9 +44,9 @@ export default function Board() {
       [2, 4, 6]
     ];
 
-    // якщо одинакові символи у трьох квадратах співпадають із виграшною комбінацією лінії/рядка
+    // перевірка чи символи у трьох квадратах співпадають із виграшним рядом
     for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i]; // ітерація по лініях/рядах
+      const [a, b, c] = lines[i]; // ітерація по рядах
       // символи повинні бути усі однакові
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a]; // повернути умовно визначений символ переможця!
@@ -60,13 +55,13 @@ export default function Board() {
     return null; // нічого не виводяться бо квадрат не має символа "X" чи "O"
   }
 
-  // to let the players know when the game is over
+  // визначити гравцю коли кінець гри
   const winner = calculateWinner(squares);
-  let status; // add status to display winner
+  let status; // додати статус щоб показати переможця
   if (winner) {
-    status = "Winner: " + winner; // to display which player won
+    status = "Winner: " + winner; // показати переможця
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O"); // to display which player’s turn is next
+    status = "Next player: " + (xIsNext ? "X" : "O"); // показати чергу наступному гравцю
   }
 
   return (
@@ -88,6 +83,80 @@ export default function Board() {
         <Square value={squares[8]} onSquareClick={() => handleClick(8)}/>
       </div>
       <div className="titles">Tic-Tac-Toy Game</div>
+    </div>
+  );
+}
+
+export default function Game() {
+  // xIsNext (a boolean) will be flipped to determine which player goes next and the game’s state will be saved
+  const [xIsNext, setXIsNext] = useState(true);
+  //  allow to store every past version of the history array, and navigate between the turns
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  // to keep track of which step the user is currently viewing
+  const [currentMove, setCurrentMove] = useState(0);
+
+  // to render the squares for the current move, you need to read the last squares array from the history
+  // const currentSquares = history[history.length - 1];
+  // to render the currently selected move, instead of always rendering the final move
+  const currentSquares = history[currentMove];
+
+  // will be called by the Board component to update the game - to update Game’s state to trigger a re-render
+  function handlePlay(nextSquares) {
+    // to update history by appending the updated squares array as a new history entry
+    // setHistory([...history, nextSquares]); // creates a new array that contains all the items in history, followed by nextSquares
+
+    /*If you "go back in time" and then make a new move from that point, you only want to keep 
+      the history up to that point. Instead of adding nextSquares after all items (... spread 
+      syntax) in history, you’ll add it after all items in history.slice(0, currentMove + 1) 
+      so that you’re only keeping that portion of the old history.*/
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    setHistory(nextHistory);
+    // to update currentMove to point to the latest history entry
+    setCurrentMove(nextHistory.length - 1);
+    setXIsNext(!xIsNext); // to flip the value of xIsNext
+  }
+
+  // to update that currentMove
+  function jumpTo(nextMove) {
+    setCurrentMove(nextMove);
+    // set xIsNext to true if the number that you’re changing currentMove to is even
+    setXIsNext(nextMove % 2 === 0);
+  }
+
+  /*Коли ітеруємо по масиву history в функції, яку ми передали для відображення, 
+    аргумент squares проходить через кожен елемент history, а аргумент move проходить 
+    через кожен індекс масиву: 0, 1, 2, …. (У більшості випадків нам знадобляться 
+    фактичні елементи масиву, але для візуалізації списку moves вам знадобляться лише
+    індекси.)
+  */
+
+  const moves = history.map((squares, move) => {
+    let description;
+    if (move > 0) {
+      description = 'Go to move #' + move;
+    } else {
+      description = 'Go to game start';
+    }
+    /*Також, значення moves ніколи не буде змінено, видалено чи вставлено 
+      в середину, а тому досить безпечно використовувати індекс move як ключ. 
+    */
+    return (
+      <li key={move}>
+        <button onClick={() => jumpTo(move)}>{description}</button>
+      </li>
+    );
+  });
+
+
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+      </div>
+      <div className="game-info">
+        <h5>Return to previous step</h5>
+        <ol>{moves}</ol>
+      </div>
     </div>
   );
 }
