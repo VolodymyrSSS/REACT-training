@@ -74,6 +74,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 For the installation go:
 npm install react-bootstrap bootstrap
 
+import into index.js this line
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 For the code snippets go:
 https://react-bootstrap.netlify.app/docs
 

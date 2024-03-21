@@ -34,7 +34,7 @@ const Login = () => {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={password}/>
             </Form.Group>
-            <Button variant="primary" type="button" onClick={loginHandler}>Login</Button>
+            <Button variant="outline-success" type="button" onClick={loginHandler}>Login</Button>
           </Col>
         </Row>
       </Container>

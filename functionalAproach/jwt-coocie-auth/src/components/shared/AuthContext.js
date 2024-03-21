@@ -25,10 +25,19 @@ export const AuthContextProvider = ({ children }) => {
     });
     setUser(apiResponse.data);
     localStorage.setItem("userProfile", JSON.stringify(apiResponse.data));
-    navigate("/home");
+    navigate("/");
   };
 
-  return <AuthContext.Provider value={{ loginApiCall, user }}>
+  const logoutApiCall = async () => {
+    await axios.get("http://localhost:4000/logout", {
+      withCredentials: true,
+    });
+    localStorage.removeItem("userProfile");
+    setUser(null);
+    navigate("/login");
+  }
+
+  return <AuthContext.Provider value={{ loginApiCall, user, logoutApiCall }}>
     { children }
   </AuthContext.Provider>
 }
