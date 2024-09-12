@@ -1,0 +1,12 @@
+.brands {
+	padding: 60px 0 55px;
+	background-color: var(--yellow);
+	margin-bottom: 100px;
+}
+
+.brands__list {
+	display: flex;
+	column-gap: 120px;
+	/*без цього знак бренду буде на білому фоні*/
+	mix-blend-mode: multiply;
+}
