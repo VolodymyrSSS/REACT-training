@@ -70,9 +70,9 @@ In case need to update
 
 2. Uninstall and then reinstall Create-React-App
 
-#### npm uninstall -g create-react-app
+#### `npm uninstall -g create-react-app`
 
-#### npx create-react-app your-app-name --template typescript
+#### `npx create-react-app your-app-name --template typescript`
 
 3. Install specific versions of React and ReactDOM like for 18th version
 
@@ -105,11 +105,11 @@ You can manually set up TypeScript in file tsconfig.json of the project root, ty
 "include": ["src"]
 }
 
-5. Set up TypeScript with React types
+5. To install the latest version of React’s type definitions:
 
 #### `npm install --save-dev @types/react @types/react-dom`
 
-6. Install and configure a Parcel bundler/setup
+6. Install and configure a Parcel bundler/setup. It lets you write modular code and bundle it together into small packages to optimize load time.
 
 #### `npm install --save-dev parcel@next @parcel/transformer-typescript-tsc`
 
@@ -168,11 +168,18 @@ Remove-Item old-project-name -Recurse -Force
 
 #### `npm init -y`
 
-2. install react and typescript
+2. install React and TypeScript
 
 #### `npm install react react-dom`
 
 #### `npm install --save-dev typescript @types/react @types/react-dom`
+
+(- if you need to install RTL separately, command for it
+npm install --save-dev @testing-library/react @testing-library/dom
+
+- if you need to install Jest, command for it
+  npm i jest or npm i --global jest-cli
+  )
 
 3. install Webpack
 
