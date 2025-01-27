@@ -1,17 +1,13 @@
 import React from 'react';
+
+import Scientist from './Scientist';
+
 import { people } from '../data/scientists';
-import { getImageUrl } from '../utils/utils';
-import { Scientist } from '../types';
+import { ScientistPerson } from '../types';
 
 export default function ScientistsList() {
-	const scientists = people.map((person: Scientist) => (
-		<li key={person.id}>
-			<img src={getImageUrl(person)} alt={person.name} />
-			<p>
-				<b>{person.name}:</b> {person.profession} known for{' '}
-				{person.accomplishment}
-			</p>
-		</li>
+	const scientists = people.map((person: ScientistPerson) => (
+		<Scientist key={person.id} person={person} />
 	));
 
 	return (

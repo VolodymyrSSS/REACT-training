@@ -1,9 +1,3 @@
-# The task
-
-Change list to show two separate lists one after another: Chemists
-and Everyone Else. Like previously, you can determine whether a
-person is a chemist by checking if person.profession === 'chemist'.s
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
