@@ -1,17 +1,26 @@
 import { useState, useEffect, useRef } from 'react';
 
+{/* useRef це хук що використовується для створення посилання на 
+	змінні, що можуть змінюватись та зберігаються між рендерингами 
+	компонентів не викликаючи при цьому перерендеринг. Або так - 
+	зберігання змінних/значень, які мають зберігатися між рендерами 
+	але не запускати повторний рендеринг у разі їх зміни. */}
+
 function App() {
 	const [anyText, setEnyText] = useState('');
-	// const [renderCount, setRenderCount] = useState(0);
-	const renderCount = useRef(0);
-	/* цей хук дуже подібний до useState - зберігає попереднє 
-	значення стану проте не викликає перерендер компоненту*/
+
+	const renderCount = useRef(0); // тут значення буде зберігається протягом усіх рендерів
+	/* Можна і так: 
+	     const [renderCount, setRenderCount] = useState(0);
+	проте setRenderCount викличе перерендер пізніше. Тому використано useRef, який
+	подібний до useState, що зберігає попереднє значення стану і коли зміниться, 
+	то не викличе перерендер компоненту. */
 
 	useEffect(() => {
-		// this cause endless loop
-		// setRenderCount(prevRenderCount => prevRenderCount + 1);
+		
+		// setRenderCount(prevRenderCount => prevRenderCount + 1); так буде викликано безкінечний цикл
 
-		// this is NOT cause component rerender
+		// а так - зміна значення ref не буде викликати перерендер
 		renderCount.current = renderCount.current + 1;
 	});
 
@@ -33,9 +42,9 @@ function App() {
 				<br />
 			</form>
 
-			<div>The text was entered {anyText} </div>
+			<div>The text was entered: {anyText} </div>
 			{/* <div>The text was rendered {renderCount} times</div> */}
-			<div>The text was rendered {renderCount.current} times</div>
+			<div>The text was rendered: {renderCount.current} times</div>
 		</div>
 	);
 }

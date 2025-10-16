@@ -42,7 +42,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-  width: 65%;
+  width: 85%;
   background-color: wheat;
   color: navy;
 }
