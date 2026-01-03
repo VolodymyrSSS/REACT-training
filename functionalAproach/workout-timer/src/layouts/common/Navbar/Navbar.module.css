@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    background-color: rgb(113, 113, 250);
+    margin: 20px;
+}
+.nav ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+    box-shadow: 0 0 10px grey;
+
+}
+.nav ul a {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
